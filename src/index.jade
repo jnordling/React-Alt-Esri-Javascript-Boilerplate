@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title React Boilerplate
+    script(src='//code.jquery.com/jquery-1.11.3.min.js')
+    script(src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
+    link(type='text/css', rel='stylesheet', href='vendor/materialize/dist/css/materialize.min.css', media='screen,projection')
+    link(type='text/css', rel='stylesheet', href='vendor/leaflet/dist/leaflet.css')
+    link(type='text/css', rel='stylesheet', href='css/app.css')
+    script(type='text/javascript', src='vendor/materialize/dist/js/materialize.min.js')
+    script(type='text/javascript', src='vendor/babel-polyfill/browser-polyfill.js')
+    link(type='text/css', rel='stylesheet', href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.css')
+    script(src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.js')
+    script(type='text/javascript', src='vendor/requirejs/require.js')
+    script.
+        requirejs.config({
+            paths: {
+                "config":"js/config",
+                "shared":"js/shared",
+                "components":"js/components",
+                "react": "vendor/react/react",
+                "react-dom": "vendor/react/react-dom.min",
+                "fetch": "shim/fetch/fetch",
+                "leaflet":"vendor/leaflet/dist/leaflet",
+                "alt": "vendor/alt/dist/alt"
+            },
+            deps: ['js/main'],
+
+        });
+  body
+    div#root
+        div#header
+        div#mapContainer
+        div#footer

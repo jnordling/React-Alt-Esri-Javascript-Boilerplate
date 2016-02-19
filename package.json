@@ -1,7 +1,7 @@
 {
-  "name": "react-drupal-api",
+  "name": "React-Alt-Esri-Javascript-Boilerplate",
   "version": "1.0.0",
-  "description": "Drupal API React UI",
+  "description": "React Alt Esri Javascript Boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "npm run build:watch & npm run serve",
@@ -22,7 +22,7 @@
     "lint:watch": "gulp lint:watch",
     "serve": "gulp browser-sync"
   },
-  "homepage": "https://github.com/blueraster/simple-es6-template",
+  "homepage": "https://github.com/jnordling/React-Alt-Esri-Javascript-Boilerplate",
   "dependencies": {
     "babel": "^5.4.7",
     "babel-eslint": "^5.0.0-beta6",
@@ -38,12 +38,10 @@
     "gulp-watch": "^4.2.4",
     "jade": "^1.10.0",
     "react": "^0.14.0",
-    "request": "^2.58.0",
-    "requirejs": "^2.1.18"
+    "request": "^2.58.0"
   },
   "devDependencies": {
     "eslint": "^1.10.0",
-    "esrislurp": "^1.2.2",
     "gulp-intern": "0.0.4",
     "gulp-shell": "^0.5.1"
   }

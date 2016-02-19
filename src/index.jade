@@ -1,35 +1,59 @@
 doctype html
 html
-  head
-    meta(charset='UTF-8')
-    title React Boilerplate
-    script(src='//code.jquery.com/jquery-1.11.3.min.js')
-    script(src='//code.jquery.com/jquery-migrate-1.2.1.min.js')
-    link(type='text/css', rel='stylesheet', href='vendor/materialize/dist/css/materialize.min.css', media='screen,projection')
-    link(type='text/css', rel='stylesheet', href='vendor/leaflet/dist/leaflet.css')
-    link(type='text/css', rel='stylesheet', href='css/app.css')
-    script(type='text/javascript', src='vendor/materialize/dist/js/materialize.min.js')
-    script(type='text/javascript', src='vendor/babel-polyfill/browser-polyfill.js')
-    link(type='text/css', rel='stylesheet', href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.css')
-    script(src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.2/mapbox-gl.js')
-    script(type='text/javascript', src='vendor/requirejs/require.js')
-    script.
-        requirejs.config({
-            paths: {
-                "config":"js/config",
-                "shared":"js/shared",
-                "components":"js/components",
-                "react": "vendor/react/react",
-                "react-dom": "vendor/react/react-dom.min",
-                "fetch": "shim/fetch/fetch",
-                "leaflet":"vendor/leaflet/dist/leaflet",
-                "alt": "vendor/alt/dist/alt"
-            },
-            deps: ['js/main'],
-
-        });
-  body
-    div#root
-        div#header
-        div#mapContainer
-        div#footer
+	head
+		meta(charset='UTF-8')
+		title React & Alt & Esri Javascript Boilerplate
+		script(src='vendor/jquery/dist/jquery.min.js')  
+		link(rel='stylesheet', href='https://js.arcgis.com/3.15/esri/css/esri.css')
+		link(type='text/css', rel='stylesheet', href='vendor/materialize/dist/css/materialize.min.css', media='screen,projection')
+		link(type='text/css', rel='stylesheet', href='css/app.css')
+		script(src='vendor/materialize/dist/js/materialize.min.js')
+		script(src='vendor/babel-polyfill/browser-polyfill.js')
+		script(src='https://js.arcgis.com/3.15/init.js',async)
+	body
+		div#root
+				div#header
+				div#mapContainer
+				div#footer
+		script.
+			var version = '0.0.1',
+			URL = location.href.replace(/\/[^/]+$/, ''),
+			dojoConfig = {
+					parseOnLoad: false,
+					isDebug: false,
+					async: true,
+					packages:[{
+									name: 'js',
+									location: URL + '/js'
+							},{
+									name: 'shared',
+									location: URL + '/js/shared'
+							}, {
+									name: 'map',
+									location: URL + '/js/map'
+							}, {
+									name: 'shim',
+									location: URL + '/shim'
+							}, {
+									name: 'vendor',
+									location: URL + '/vendor'
+							}, {
+									name: 'components',
+									location: URL + '/js/components'
+							}
+					],
+					aliases: [
+							['alt', 'vendor/alt/dist/alt'],
+							['react', 'vendor/react/react'],
+							['react-dom','vendor/react/react-dom.min'],
+							['babel-polyfill', 'shim/babel-polyfill/browser-polyfill'],
+							['fetch', 'shim/fetch/fetch'],
+							['alt', 'vendor/alt/dist/alt'],
+					],
+					deps: [
+							'dojo/domReady!'
+					],
+					callback: function() {
+							require(['js/main']);
+					}
+				};

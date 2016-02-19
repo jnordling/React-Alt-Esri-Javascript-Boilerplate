@@ -1,13 +1,11 @@
 /*eslint-disable */
-import {mapActions} from 'components/map/mapActions';
+import {mapActions} from 'components/map/actions';
 import alt from 'js/alt';
-import {map as mapConfig} from 'config';
-import L from 'leaflet';
+import Map from "esri/map"
 
 class MapStore {
 	constructor () {
 		this.map = {};
-		this.mapSize = mapConfig.sizes.default;
 		this.bindListeners({
 			initialize: mapActions.initialize,
 			changeMapSize: mapActions.changeMapSize
@@ -15,10 +13,11 @@ class MapStore {
 	}
 
 	initialize(){
-		//let map = L.map('map').setView([38.891037, -77.085998], 18);
-		//L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map)
-		mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ubm9yZGxpbmciLCJhIjoiZTcwNDcxN2ZiMWU0YTZhZjM2ZWFlNTMxZWI4Y2QwNWMifQ.mMQKvbPR2IYIv7DsV2HU4A';
-		var map = new mapboxgl.Map({container: 'map',style: 'mapbox://styles/mapbox/streets-v8',center: [-74.50, 40],zoom: 9});
+		var map = new Map("map", {
+	    center: [-118, 34.5],
+	    zoom: 8,
+	    basemap: "topo"
+	  });
 		this.map = map;
 	}
 

@@ -1,5 +1,5 @@
 {
-  "name": "simple-es6-template",
+  "name": "React-Alt-Esri-Javascript-Boilerplate",
   "version": "0.0.0",
   "authors": [
     "Jon Nordling <jonnordling@gmail.com>"
@@ -10,11 +10,10 @@
     "alt": "~0.16.10",
     "babel-polyfill": "~0.0.1",
     "fetch": "~0.10.1",
-    "leaflet": "~0.7.7",
+    "jquery": "~2.2.0",
     "Materialize": "materialize#~0.97.5",
     "normalize.css": "~3.0.3",
     "react": "~0.14.0",
-    "request": "~2.58.1",
-    "requirejs": "~2.1.22"
+    "request": "~2.58.1"
   }
 }

@@ -14,4 +14,8 @@
 
 ## .gitignored files
 
-In the composer-ui folder, `touch jasmine-active-specs.js`
+
+# How to get up and running
+>git clone https://github.com/jnordling/React-Alt-Esri-Javascript-Boilerplate yourprojectname
+>git remote set-url origin http://yourrepourl.git
+>git push -u origin master
